@@ -1,24 +1,16 @@
-import logo from './logo.svg';
+import { Routes, Route } from "react-router-dom";
+import Base from "./components/Base";
 import './App.css';
+import LeaderBoard from "./components/Leaderboard";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App mt-auto d-flex flex-column min-vh-100">
+        <Routes>
+          <Route path="/" element={<Base />} />
+          <Route path="leaderboard" element={<LeaderBoard />} />
+        </Routes>
+      </div>
   );
 }
 
