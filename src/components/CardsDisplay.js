@@ -128,7 +128,7 @@ function CardsDisplay({ IsLoading, teams }) {
         <h1 className="text-5xl text-[#75aadb] pr-2"> más grande</h1>
         <h1 className="text-5xl ">?</h1>
       </div>
-      <h3 className="text-3xl m-4">Score: {0}</h3>
+      <h3 className="text-3xl m-4">Score: {score}</h3>
       <form ref={nameref}>
         <div className="">
           <input type="text" className="border p-2 bg-slate-800" ref={nameInputRef} id="Nombre" placeholder="Tu Nombre aca..."/>
