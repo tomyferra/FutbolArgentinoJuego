@@ -3,7 +3,7 @@ import afaLogo from '../images/afa.webp';
 import Card from "./Card";
 import BounceLoader from "react-spinners/BounceLoader";
 import axios from "axios";
-import { FaThumbsDown } from "react-icons/fa";
+import { FaThumbsDown, FaThumbsUp } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 
 function CardsDisplay({ IsLoading, teams }) {
@@ -11,11 +11,17 @@ function CardsDisplay({ IsLoading, teams }) {
   const [score,setScore] = useState(0);
   const [displayAlert,setDisplayAlert] = useState(false);
   const [lostGame,setLostGame] = useState(false);
+  const [winGame,setWinGame] = useState(false);
   const nameInputRef = useRef(null);
   const nameref = useRef(null);
 
-  function restartGame() {
-    setLostGame(true)
+  function restartGame( lost ) {
+    if (lost) {
+      setLostGame(true)
+    }
+    else{
+      setWinGame(true)
+    }
     if (score===0) {
       nameref.current.reset();
     }
@@ -26,14 +32,12 @@ function CardsDisplay({ IsLoading, teams }) {
       setScore(0)
       setAvailablePairs(teams);
       nameref.current.reset();
-      alert("Puntaje añadido a la lista")
     }
 }
 
   function checkItemsRemaining(teamsLeft) {
     if (teamsLeft<2){
-      alert("You won!")
-      restartGame()
+      restartGame( false )
     }
   }
 
@@ -61,7 +65,7 @@ function CardsDisplay({ IsLoading, teams }) {
         checkItemsRemaining(availablePairs.length - 2 )
       }
       else{
-        restartGame()
+        restartGame( true )
       }
     }
   }
@@ -79,7 +83,7 @@ function CardsDisplay({ IsLoading, teams }) {
         checkItemsRemaining(availablePairs.length - 2 )
       }
       else{
-        restartGame()
+        restartGame( true )
       }
     }
   }
@@ -90,13 +94,16 @@ function CardsDisplay({ IsLoading, teams }) {
   function hideLostGame () {
     setLostGame(false)
   }
+  function hideWinGame () {
+    setWinGame(false)
+  }
 
   return (
     <div id='Home' className="text-white flex-col justify-center items-center">
       {displayAlert ?
-        <div class="bg-red-100 border flex border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <div class="bg-red-800 border flex border-red-400 text-red-100 px-4 py-3 rounded relative" role="alert">
           <div className=" flex-col mx-auto text-center justify-center object-center ">
-            <strong class="font-bold">Error!</strong>
+          <strong class="font-bold text-xl m-2">Error!</strong>
             <br/>
             <span class="block sm:inline">El nombre no puede estar vacio</span>
           </div>
@@ -107,17 +114,33 @@ function CardsDisplay({ IsLoading, teams }) {
         : null
       }
       {lostGame ?
-        <div class="bg-[#75aadb] border flex border-gray-300 text-[#000] px-4 py-3 rounded relative" role="alert">
+        <div class="bg-red-400 border flex border-gray-300 text-[#000] px-4 py-3 rounded relative" role="alert">
           <div className=" flex-col mx-auto text-center justify-center object-center ">
             <div className="flex mx-auto text-center justify-center">
-              <FaThumbsDown size={25} className="m-2" />
-              <strong class="font-bold text-2xl">Perdiste!</strong>
-              <FaThumbsDown size={25} className="m-2" />
+              <FaThumbsDown size={22} className="m-2" />
+              <strong class="font-bold text-xl m-2">Perdiste!</strong>
+              <FaThumbsDown size={22} className="m-2" />
             </div>
             <br/>
             <span class="block sm:inline text-xl">Gracias por jugar. Puntaje añadido a la lista</span>
           </div>
           <button onClick={hideLostGame}>
+            <AiOutlineClose className=" flex justify-center object-center items-center my-auto" size={20} />
+          </button>
+        </div>
+        : null}
+      {winGame ?
+        <div class="bg-[#75aadb] border flex border-gray-300 text-[#000] px-4 py-3 rounded relative" role="alert">
+          <div className=" flex-col mx-auto text-center justify-center object-center ">
+            <div className="flex mx-auto text-center justify-center">
+              <FaThumbsUp size={22} className="m-2" />
+              <strong class="font-bold text-xl m-2">Ganaste!!</strong>
+              <FaThumbsUp size={22} className="m-2" />
+            </div>
+            <br/>
+            <span class="block sm:inline text-xl">Gracias por jugar. Puntaje añadido a la lista</span>
+          </div>
+          <button onClick={hideWinGame}>
             <AiOutlineClose className=" flex justify-center object-center items-center my-auto" size={20} />
           </button>
         </div>

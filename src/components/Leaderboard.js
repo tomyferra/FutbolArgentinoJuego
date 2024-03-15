@@ -35,7 +35,7 @@ function Leaderboard() {
       <Navbar />
       <div className="text-white flex-col justify-center items-center">
         <img src={afaLogo} alt="logo" className="flex mx-auto justify-center max-w-[60px] m-4"/>
-        <h1 className="text-white m-5 p-5">Top 100 puntajes</h1>
+        <h1 className="text-white text-2xl font-bold m-5 p-5">Top 100 puntajes</h1>
         {IsLoading ?
           <div className="grid justify-center items-center max-w-[1240px] mx-auto p-7 mt-4">
             <BounceLoader className='' color="#36d7b7" />
