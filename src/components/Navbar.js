@@ -15,8 +15,8 @@ function Navbar() {
         Futbol Argentino
       </h1>
       <ul className="hidden md:flex">
-        <li className="p-4"><Link className="nav-link " to="/">Home</Link></li>
-        <li className="p-4"><Link className="nav-link " to="leaderboard">Leaderboard</Link></li>
+        <li className="p-4 hover:underline"><Link className="nav-link " to="/">Home</Link></li>
+        <li className="p-4 hover:underline"><Link className="nav-link " to="leaderboard">Leaderboard</Link></li>
       </ul>
       <div className=" block md:hidden" onClick={handleNav}>
         {!nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
@@ -33,10 +33,10 @@ function Navbar() {
         </h1>
         <ul className="pt-4">
           <li className="p-4 border-b border-gray-600">
-            <Link className="nav-link " to="/">Home</Link>
+            <Link className="hover:underline " to="/">Home</Link>
           </li>
           <li className="p-4">
-            <Link className="nav-link " to="leaderboard">Leaderboard</Link>
+            <Link className="hover:underline" to="leaderboard">Leaderboard</Link>
           </li>
         </ul>
       </div>

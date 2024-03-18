@@ -147,11 +147,11 @@ function CardsDisplay({ IsLoading, teams }) {
         : null}
       <img src={afaLogo} alt="logo" className="flex mx-auto justify-center max-w-[60px] m-4"/>
       <div className="flex mx-auto justify-center">
-        <h1 className="text-5xl pr-2">Que estadio es</h1>
-        <h1 className="text-5xl text-[#75aadb] pr-2"> más grande</h1>
-        <h1 className="text-5xl ">?</h1>
+        <h1 className="text-2xl md:text-5xl pr-2">Que estadio es</h1>
+        <h1 className="text-2xl md:text-5xl text-[#75aadb] pr-2"> más grande</h1>
+        <h1 className="text-2xl md:text-5xl ">?</h1>
       </div>
-      <h3 className="text-3xl m-4">Score: {score}</h3>
+      <h3 className="text-2xl md:text-3xl m-4">Score: {score}</h3>
       <form ref={nameref}>
         <div className="">
           <input type="text" className="border p-2 bg-slate-800" ref={nameInputRef} id="Nombre" placeholder="Tu Nombre aca..."/>
