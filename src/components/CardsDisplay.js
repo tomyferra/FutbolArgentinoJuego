@@ -100,6 +100,7 @@ function CardsDisplay({ IsLoading, teams }) {
 
   return (
     <div id='Home' className="text-white flex-col justify-center items-center">
+
       {displayAlert ?
         <div class="bg-red-800 border flex border-red-400 text-red-100 px-4 py-3 rounded relative" role="alert">
           <div className=" flex-col mx-auto text-center justify-center object-center ">
