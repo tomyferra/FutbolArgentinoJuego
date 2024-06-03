@@ -13,7 +13,7 @@ function Leaderboard() {
   useEffect(() => {
     async function loadTeams(){
       setIsLoading(true);
-      await fetch('https://estadiosapi.vercel.app/api/v1/leaderboard/')
+      await fetch('https://futbolargentinonode.onrender.com/leaderboard/')
         .then((response) => {
           response.json().then((data) =>{
             setLeaders(data)

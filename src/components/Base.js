@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     async function loadTeams(){
       setIsLoading(true);
-      await fetch('https://estadiosapi.vercel.app/api/v1/teams/')
+      await fetch('https://futbolargentinonode.onrender.com/teams/')
         .then((response) => {
           response.json().then((data) =>{
             setTeamsNotDisplayed(data)
