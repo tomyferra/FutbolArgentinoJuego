@@ -15,16 +15,17 @@ Futbol Argentino is a web application designed for users to play a game where yo
 ## Links
 
 - Frontend: [Futbol Argentino Frontend](https://futbolargentinojuego.vercel.app)
-- Backend API: [Futbol Argentino Backend API](https://estadiosapi.vercel.app/docs)
+- Backend API: [Futbol Argentino Backend API](https://futbolargentinoapi.vercel.app)
 - Frontend GitHub Repository: [GitHub - Frontend](https://github.com/tomyferra/FutbolArgentinoJuego)
 - Backend GitHub Repository: [GitHub - Backend](https://github.com/tomyferra/FutbolArgentinoAPI)
 
 ## Technologies Used
 
 - React
-- Django
 - Tailwind
 - Postgres DB
+- Express
+- NodeJS
 
 ## Usage
 
