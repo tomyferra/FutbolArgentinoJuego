@@ -27,7 +27,7 @@ function CardsDisplay({ IsLoading, teams }) {
     }
     else {
       const newScore = {'Name' : nameInputRef.current.value, 'Score': score}
-      axios.post('https://estadiosapi.vercel.app/api/v1/leaderboard/', newScore)
+      axios.post('https://estadiosapi.vercel.app/api/leaderboard/', newScore)
           .then(response => console.log("New score: ",newScore));
       setScore(0)
       setAvailablePairs(teams);
